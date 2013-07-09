@@ -1,0 +1,733 @@
+
+@w: #FFFFFF;
+@b: #000000;
+
+@bg: #EDEBDE;
+@text: mix(#EDEBDE, #000000, 40%);
+
+@blue: #0297D9;
+@green: #70B826;
+@pink: #FEDBD5;
+@purple: #1D0B38;
+
+@font-sans: 'Segoe UI', 'Optima', 'Droid Sans', 'Arial', 'Hiragino Sans GB', 'Microsoft JhengHei', sans-serif;
+@font-serif: 'Cambria', 'Copperplate', 'Droid Serif', 'Georgia', 'STSong', 'SimSun', serif;
+
+@font-face {
+	font-family: 'QumpellkaNo12Regular';
+	src: url('/asset/fonts/QumpellkaNo12-webfont.eot');
+	src: url('/asset/fonts/QumpellkaNo12-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/asset/fonts/QumpellkaNo12-webfont.woff') format('woff'),
+		 url('/asset/fonts/QumpellkaNo12-webfont.ttf') format('truetype'),
+		 url('/asset/fonts/QumpellkaNo12-webfont.svg#QumpellkaNo12Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RobotoCondensed';
+	src: url('/asset/fonts/Roboto-Condensed-webfont.eot');
+	src: url('/asset/fonts/Roboto-Condensed-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/asset/fonts/Roboto-Condensed-webfont.woff') format('woff'),
+		 url('/asset/fonts/Roboto-Condensed-webfont.ttf') format('truetype'),
+		 url('/asset/fonts/Roboto-Condensed-webfont.svg#RobotoCondensed') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OswaldLight';
+	src: url('/asset/fonts/Oswald-Light-webfont.eot');
+	src: url('/asset/fonts/Oswald-Light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/asset/fonts/Oswald-Light-webfont.woff') format('woff'),
+		 url('/asset/fonts/Oswald-Light-webfont.ttf') format('truetype'),
+		 url('/asset/fonts/Oswald-Light-webfont.svg#OswaldLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.sans{
+	font-family: @font-sans;
+}
+
+.serif{
+	font-family: @font-serif;
+}
+
+.script{
+	font-family: 'QumpellkaNo12Regular', @font-sans;
+}
+
+.thin{
+	font-family: 'RobotoCondensed', @font-sans;
+}
+
+.thiner{
+	font-family: 'OswaldLight', @font-sans;
+}
+
+.listless{
+	list-style: none;
+	padding: 0;
+}
+
+.linkless{
+	text-decoration: none;
+	outline: 0;
+	color: inherit;
+
+	&:focus{
+		outline: 0;
+	}
+}
+
+.size(@fontSizeRatio: 1, @lineHeightRatio: 1) {
+	font-size: 16px * @fontSizeRatio;
+	font-size: 1rem * @fontSizeRatio;
+	line-height: 1em * @lineHeightRatio;
+}
+
+// background sizing, from twitter bootstrap
+.background-size(@size){
+	-webkit-background-size: @size;
+	-moz-background-size: @size;
+	-o-background-size: @size;
+	background-size: @size;
+}
+
+// background cliping, from twitter bootstrap
+.background-clip(@clip) {
+	-webkit-background-clip: @clip;
+	-moz-background-clip: @clip;
+	background-clip: @clip;
+}
+
+// box radius that works on older device, from twitter bootstrap 
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// box shadow that works on older device, from twitter bootstrap 
+.box-shadow(@shadowA, @shadowB:X, ...){
+	@props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+	-webkit-box-shadow: @props;
+	-moz-box-shadow: @props;
+	box-shadow: @props;
+}
+
+// box content sizing from twitter bootstrap
+.box-sizing(@boxmodel) {
+	-webkit-box-sizing: @boxmodel;
+	-moz-box-sizing: @boxmodel;
+	box-sizing: @boxmodel;
+}
+
+// object rotate from twitter bootstrap
+.rotate(@degrees) {
+	-webkit-transform: rotate(@degrees);
+	-moz-transform: rotate(@degrees);
+	-ms-transform: rotate(@degrees);
+	-o-transform: rotate(@degrees);
+	transform: rotate(@degrees);
+}
+
+// simple css transition from twitter bootstrap
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+// custom prefix for css3 transition
+.transition-prefixed(@transition) {
+	-webkit-transition: ~"-webkit-@{transition}";
+	-moz-transition: ~"-moz-@{transition}";
+	-o-transition: ~"-o-@{transition}";
+	transition: @transition;
+}
+
+html, body{
+	height: 100%;
+}
+
+.wrapper{
+	overflow: hidden;
+	min-height: 100%;
+	background-color: #FCFCFC; //match the background color of cover img
+	background-image: url(/asset/img/begin.jpg);
+	background-repeat: no-repeat;
+	.background-size(cover);
+}
+
+.column{
+	min-width: 240px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.header{
+	width: 100%;
+	overflow: hidden;
+
+	@media only screen and (min-width: 1000px) {
+		padding-bottom: 30px;
+	}
+}	
+
+.intro{
+	margin: 10px 20px 40px;
+	padding: 0.5em;
+	position: relative;
+	z-index: 10;
+	background: fadeout(@blue, 40%);
+
+	&:before, &:after{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		outline: 1px solid transparent;
+		.transition-prefixed(transform .5s);
+	}
+
+	&:before{
+		top: -5px;
+		left: -10px;
+		z-index: -1;
+		background: fadeout(@pink, 20%);
+		.rotate(-5deg);
+	}
+
+	&:after{
+		top: 5px;
+		left: 10px;
+		z-index: -2;
+		background: fadeout(@green, 50%);
+		.rotate(5deg);
+	}
+
+	&:hover{
+		&:before{
+			.rotate(5deg);
+		}
+
+		&:after{
+			.rotate(-5deg);
+		}
+	}
+
+	@media only screen and (min-width: 600px) {
+
+		max-width: 540px;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	@media only screen and (min-width: 1000px) {
+
+		width: 360px;
+		margin: 0 0 0 20px;
+		float: left;
+
+	}
+}
+
+.title{
+	.size(3);
+	text-align: center;
+	margin: 0.25em 0;
+	color: @w;
+	font-weight: normal;
+
+	span{
+		text-shadow: 10px 10px 60px @blue,
+					 -15px -10px 50px @green,
+					 20px -20px 40px darken(@pink, 20%),
+					 -3px -2px 1px darken(@bg, 30%);
+	}
+
+	sup{
+		font-weight: bold;
+		color: fadeout(@purple, 50%);
+		.transition(~"text-shadow .5s, color .5s");
+	}
+
+	a:hover sup, a:focus sup{
+		color: @w;
+		text-shadow: 10px 10px 60px @blue,
+					 -15px -10px 50px @green,
+					 20px -20px 40px darken(@pink, 20%),
+					 -3px -2px 1px darken(@bg, 30%);
+	}
+
+	@media only screen and (min-width: 400px) {
+		.size(4);
+	}
+
+	@media only screen and (min-width: 600px) {
+		.size(5);
+	}
+}
+
+.tagline{
+	.size(1);
+	text-align: center;
+	margin: 0 0 1em;
+	color: @w;
+	text-shadow: 0 5px 30px darken(@pink, 30%),
+				 0 2px 3px fadeout(@b, 60%);
+
+	@media only screen and (min-width: 400px) {
+		.size(1.5);
+	}
+}
+
+.nav{
+	.size(1.125);
+	margin: 20px;
+	overflow: hidden;
+	background-color: fadeout(@b, 60%);
+	.border-radius(1em);
+	.background-clip(padding-box);
+	.box-shadow(inset 0 0 4px lighten(@b, 20%), 0 1px 1px fadeout(@w, 20%));
+
+	li{
+		text-align: center;
+		display: block;
+		color: @w;
+
+		&:first-child a{
+			border-top: none;
+			border-left: none;
+		}
+
+		&:last-child a{
+			border-bottom: none;
+			border-right: none;
+		}
+	}
+
+	a{
+		display: block;
+		padding: 0.5em 0;
+		border-top: 1px solid fadeout(@w, 60%);
+		border-bottom: 1px solid fadeout(@b, 60%);
+		text-shadow: 0 1px @b;
+		.transition(background-color .5s);
+
+		&:hover, &:focus, &.slide-control-active{
+			background-color: fadeout(lighten(@blue, 20%), 60%);
+			text-shadow: 0 0 10px darken(@blue, 20%),
+						 0 1px @b;
+		}
+	}
+
+	@media only screen and (min-width: 400px) {
+
+		.size(1.25);
+
+	}
+
+	@media only screen and (min-width: 600px) {
+
+		max-width: 560px;
+		margin: 20px auto;
+
+		li{
+			float: left;
+			width: 25%;
+			.box-sizing(border-box);
+		}
+
+		a{
+			border: none;
+			border-left: 1px solid fadeout(@w, 60%);
+			border-right: 1px solid fadeout(@b, 60%);
+		}
+
+	}
+
+	@media only screen and (min-width: 1000px) {
+
+		float: right;
+		margin: 40px;
+
+		li{
+			width: auto;
+			overflow: hidden;
+		}
+
+		a{
+			padding: 0.5em 1em;
+		}
+
+	}
+}
+
+.main{
+	width: 100%;
+	height: 600px;
+}
+
+.slider{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+	position: relative;
+
+	.slider-wrap{
+		overflow: hidden;
+		position: relative;
+	}
+
+	.slider-wrap > div{
+		float: left;
+		width: 100%;
+		height: 600px; //same as container .main
+		position: relative;
+	}
+
+	@media only screen and (min-width: 600px) {
+		max-width: 580px;
+		margin: 0 auto;
+	}
+
+	@media only screen and (min-width: 1000px) {
+		max-width: 1100px;
+	}
+}
+
+.green{
+	background-color: fadeout(@green, 30%);
+}
+
+.blue{
+	background-color: fadeout(@blue, 30%);
+}
+
+.pink{
+	background-color: fadeout(darken(@pink, 30%), 30%);
+}
+
+.purple{
+	background-color: fadeout(lighten(@purple, 30%), 30%);
+}
+
+.brown{
+	background-color: fadeout(darken(@bg, 30%), 30%);
+}
+
+.black{
+	background-color: fadeout(@b, 60%);
+}
+
+.none{
+	background-color: transparent;
+}
+
+.section{
+	width: 100%;
+	padding: 0 1.5em;
+	overflow: hidden;
+	.box-sizing(border-box);
+
+	p, h2{
+		display: inline;
+		margin: 0;
+		color: @w;
+		text-shadow: 0 1px 2px fadeout(@b, 50%);
+		background-color: fadeout(@b, 60%);
+
+		&:hover{
+			span{
+				text-shadow: 2px 2px 0 fadeout(@b, 60%);
+			}
+		}
+	}
+
+	p{
+		.size(1.5, 1.25);
+
+		&.small{
+			.size(1.25, 1.25);
+		}
+	}
+
+	h2{
+		.size(2, 1.25);
+		font-weight: normal;
+	}
+
+	ul.list{
+		list-style: circle outside;
+		padding: 0 0 0 1em;
+		margin: 0;
+		.size(1.75, 1.25);
+
+		p{
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		li{
+			margin: 0.5em 0;
+			color: @w;
+
+			&:hover{
+				list-style-type: disc;
+			}
+
+		}
+
+	}
+
+	ul.inline{
+		.size(2.75, 1.25);
+
+		p{
+			font-size: inherit;
+			line-height: inherit;
+			background-color: transparent;
+		}
+
+		li{
+			display: inline-block;
+		}
+		
+	}
+
+	ul.grid{
+		overflow: hidden;
+
+		li{
+			display: block;
+
+			a{
+				width: 100%;
+			}
+		}
+	}
+
+	a.link{
+		&:hover:before{
+			content: "http:// ";
+		}
+	}
+
+	a.hash{
+		&:hover:after{
+			content: " (TBA)";
+		}
+	}
+
+	a.img{
+		max-width: 100%;
+		display: inline-block;
+		padding: 4px;
+		.box-sizing(border-box);
+
+		img{
+			display: block;
+			max-width: 100%;
+			.box-shadow(0 0 0 2px fadeout(@b, 70%));
+		}
+
+		&:hover img{
+			.box-shadow(0 0 0 2px fadeout(@blue, 50%));
+		}
+	}
+
+	@media only screen and (min-width: 400px) {
+
+		p{
+			.size(1.75, 1.25);
+
+			&.small{
+				.size(1.25, 1.25);
+			}
+		}
+
+		h2{
+			.size(2.25, 1.25);
+		}
+
+		ul.list{
+			.size(2, 1.25);
+		}
+
+		ul.inline{
+			.size(3, 1.25);
+		}
+
+		ul.grid{
+			li{
+				float: left;
+				width: 50%;
+			}
+		}
+
+	}
+
+	@media only screen and (min-width: 600px) {
+
+		padding: 2em 1.5em;
+
+		p{
+			.size(2, 1.25);
+
+			&.small{
+				.size(1.5, 1.25);
+			}
+		}
+
+		h2{
+			.size(2.5, 1.25);
+		}
+
+		ul.list{
+			.size(2, 1.25);
+		}
+
+		ul.inline{
+			.size(3, 1.25);
+		}
+
+		ul.grid{
+			li{
+				width: 33%;
+			}
+		}
+
+	}
+
+	@media only screen and (min-width: 1000px) {
+
+		padding: 5em 2em;
+
+		p{
+			.size(2.25, 1.25);
+
+			&.small{
+				.size(1.75, 1.25);
+			}
+		}
+
+		h2{
+			.size(2.75, 1.25);
+		}
+
+		ul.list{
+			.size(2.25, 1.25);
+		}
+
+		ul.inline{
+			.size(3.5, 1.25);
+		}
+
+		ul.grid{
+			li{
+				width: 25%;
+			}
+		}
+
+	}
+}
+
+.overlay{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: fadeout(@b, 20%);
+	background-image: url(/asset/img/loader.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	overflow: hidden;
+
+	&.hide{
+		display: none;
+	}
+
+	.overlay-table{
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		height: 100%;
+		
+		.overlay-cell{
+			width: 100%;
+			display: table-cell;
+			vertical-align: middle;
+
+			img{
+				max-width: 90%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+
+}
+
+.language{
+	position: absolute;
+	z-index: 500;
+	top: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	background-color: fadeout(@b, 60%);
+	color: @w;
+	opacity: 0;
+	.transition(opacity .5s);
+
+	&:hover, &.init{
+		opacity: 1;
+	}
+
+	p{
+		display: inline;
+		.size(1, 2);
+	}
+
+	a{
+		color: @w;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+.browser{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	padding: 1em;
+	background-color: @bg;
+	color: @text;
+
+	a{
+		color: darken(@green, 10%);
+		text-decoration: none;
+		font-weight: bold;
+
+		&:hover, &:focus{
+			text-decoration: underline;
+		}
+	}
+
+	&.hide{
+		display: none;
+	}
+}

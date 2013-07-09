@@ -1,0 +1,9 @@
+li, p, h2, span{
+	color: #000 !important;
+}
+a{
+	text-decoration: underline !important;
+}
+.wrapper{
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/asset/img/begin.jpg',sizingMethod='scale');
+}
