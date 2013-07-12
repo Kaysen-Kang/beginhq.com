@@ -2,6 +2,5 @@
 # ignore current config, put default config in example folder
 
 *.php
-
 packages/
 testing/
