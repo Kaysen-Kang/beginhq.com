@@ -15,9 +15,11 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function welcomeHome()
 	{
-		return View::make('hello');
+		$route = explode(' /', Route::currentRouteName());
+
+		return View::make('home.'.$route[1]);
 	}
 
 }

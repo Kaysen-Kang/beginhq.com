@@ -11,10 +11,28 @@
 |
 */
 
+#mostly static external-facing paging
+
 Route::get('/', function()
 {
-	return View::make('hello');
+    return 'root';
 });
+
+Route::get('/home', 'HomeController@welcomeHome');
+Route::get('/team', 'HomeController@welcomeHome');
+
+
+Route::get('/project', function()
+{
+    return 'project';
+});
+
+Route::get('/contact', function()
+{
+    return 'contact';
+});
+
+#admin login
 
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/auth/{provider}', 'App\Controllers\Admin\AuthController@actionSession');
@@ -25,9 +43,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 	Route::resource('articles', "App\Controllers\Admin\ArticlesController");
 });
 
-Route::get('test', function() {
-	return "test success!!!";
-});
+#email contact
 
 Route::get('mail/send', 'Mailcontroller@getSend');
 Route::post('mail/send', array('as' => 'mail.send', 'uses' => "Mailcontroller@sendMail"));
