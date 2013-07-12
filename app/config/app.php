@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://beginhq.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'uPfuAnUWxAOmyDviXOio8jMoNSkIMFON',
+	'key' => '7oUXfxt11PA2SrTybYvVbLIOtpIdcEEa',
 
 	/*
 	|--------------------------------------------------------------------------
