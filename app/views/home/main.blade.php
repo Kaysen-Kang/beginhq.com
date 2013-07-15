@@ -10,8 +10,7 @@
 		<div class="header">
 			<a href="/" title="back home">
 				<h1 class="logo green"><span>Begin</span><span>*</span></h1>
-				<p class="logo green"><span>B</span><span>*</span></h1>
-				<p class="tagline darkGreen">Innovation from the ground up.</p>
+				<p class="tagline green small border">Innovation from the ground up.</p>
 			</a>
 		</div>
 
