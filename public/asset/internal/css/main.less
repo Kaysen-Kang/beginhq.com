@@ -44,14 +44,20 @@
 
 @font-basis: 'Helvetica', 'Arial', sans-serif;
 @font-title: 'QumpellkaNo12', 'Helvetica', 'Arial', sans-serif;
-@font-alt: 'OswaldLight', 'Helvetica', 'Arial', sans-serif;
-@font-alt2: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
+@font-alt: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
+@font-sans: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 
 //general
 
 .font(@scale){
     font-size: @scale * 16px;
     font-size: @scale * 1rem;
+}
+
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
 }
 
 .box-shadow(@shadowA, @shadowB:X, ...){
@@ -67,6 +73,12 @@
 	box-sizing: @boxmodel;
 }
 
+.background-clip(@clip) {
+	-webkit-background-clip: @clip;
+	-moz-background-clip: @clip;
+	background-clip: @clip;
+}
+
 .transition(@transitionA, @transitionB:X, ...) {
 	@props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
 	-webkit-transition: @props;
@@ -80,12 +92,26 @@
 	margin: 0 auto;
 }
 
+.background-playground(@color, @crossColor) {
+
+	background: 
+	radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
+	radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
+	linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
+	linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
+
+	background-color: @color;
+	background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+	.background-clip(padding-box);
+
+}
+
 //main
 
 body {
 	background-color: white;
 	color: @coffee;
-	font-family: @font-basis;
+	font-family: @font-sans;
 	background: url(/asset/img/bg.jpg) no-repeat top left;
 	background-size: cover;
 }
@@ -149,10 +175,10 @@ header.top {
 			}
 		}
 
-		a:hover{
+		a:hover, a:focus{
 			.logo{
 				top: 0;
-				color: darken(@green, 25%);
+				color: darken(@green, 15%);
 				text-shadow: -1px -1px 0 darken(@darkGreen, 30%);
 			}
 			.tagline{
@@ -185,14 +211,16 @@ header.top {
 					width: 90%;
 					margin: 0 auto;
 					line-height: 2;
+					border-bottom: 3px solid transparent;
 					.font(1.125);
 
 					&:hover{
-						color: @coffee;	
+						color: @coffee;
+						border-bottom: 3px solid @coffee;
 					}
 
 					&.active{
-						text-decoration: underline;
+						border-bottom: 3px solid @grey;
 					}
 				}
 			}
@@ -205,6 +233,8 @@ header.top {
 
 	@media screen and (min-width: 600px) {
 		padding-top: 0.25em;
+		.border-radius(0 0 4px 4px);
+		border-bottom: 3px solid lighten(@grey, 10%);
 
 		div.header{
 			width: auto;
@@ -219,7 +249,7 @@ header.top {
 				top: 0;
 				left: -30px;
 				display: inline-block;
-				.transition(left .5s ease, opacity .5s ease);
+				.transition(left .5s ease .5s, opacity .5s ease .5s);
 			}
 
 			.green.border{
@@ -227,7 +257,7 @@ header.top {
 				.box-shadow(none);
 			}
 
-			a:hover{
+			a:hover, a:focus{
 				.logo{
 					
 				}
@@ -258,14 +288,13 @@ header.top {
 }
 
 div.intro{
-	//background-color: @grey;
 	overflow: hidden;
 	text-align: center;
 
 	p{
 		color: white;
-		font-family: @font-alt2;
-		line-height: 2;
+		font-family: @font-alt;
+		line-height: 2.5;
 		text-shadow: 1px 1px 0 darken(@grey, 10%);
 		.font(1.125);
 
@@ -277,6 +306,7 @@ div.intro{
 
 	@media screen and (min-width: 550px) {
 		p{
+			line-height: 2;
 			.font(1.5);
 			text-shadow: 1px 1px 0 darken(@grey, 15%);
 
@@ -285,15 +315,23 @@ div.intro{
 				text-shadow: 1px 2px 0 darken(@grey, 15%);
 			}
 		}
-
 	}
 }
 
 div.main{
-
 	background-color: fadeout(@light, 40%);
 	overflow: hidden;
 	
+	h2.section{
+		margin: 1em;
+		color: @grey;
+		font-family: @font-alt;
+
+		&:before{
+			content: "//";
+		}
+	}
+
 	article{
 		z-index: 1;
 		position: relative;
@@ -309,7 +347,7 @@ div.main{
 			width: 0;
 			height: 0;
 			border-width: 30px 0 0 30px;
-			border-color: @grey darken(@paper, 10%); //need to match :after border color
+			border-color: darken(@paper, 20%) darken(@paper, 10%); //need to match :after border color
 			border-style: solid;
 			.box-shadow(-2px 2px 2px 0 fadeout(black, 70%));
 		}
@@ -322,53 +360,75 @@ div.main{
 			right: -4px;
 			left: -4px;
 			bottom: -4px;
-			border: 4px solid @grey; //need to match :before corner color
+			border: 4px solid darken(@paper, 20%); //need to match :before corner color
 			background-color: @paper;
+			.border-radius(4px);
 		}
 
 		header{
 			border-bottom: 1px solid darken(@paper, 15%);
 
 			h2.title{
-				font-family: @font-alt2;
+				font-family: @font-alt;
 			}
 			span.date{
-				font-family: @font-alt2;
+				font-family: @font-alt;
 				color: @grey;
 			}
 		}
 	}
 
+	@media screen and (min-width: 600px) {
+		.border-radius(4px);
+	}
+
 }
 
 footer{
-	background-color: @paper;
+	margin-top: 2em !important;
 	overflow: hidden;
+	.background-playground(@paper, darken(@paper, 5%));
 
-	div.info{
-		margin: 1em;
+	ul.columns{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
 
-		ul.columns{
-			list-style: none;
-			padding: 0;
-			overflow: hidden;
+		> li{
+			display: block;
+			padding: 1em;
+			color: @grey;
 
-			> li{
-				display: block;
-				padding: 1em;
-				color: @grey;
+			p{
+				margin: 0;
+			}
 
-				h3{
-					font-family: @font-alt;
-					font-weight: normal;
-					color: @green;
-					text-shadow: 1px 1px 0 @darkGreen;
+			a{
+				color: darken(@darkGreen, 20%);
+				text-decoration: none;
+
+				&:hover, &:focus{
+					text-decoration: underline;
+				}
+			}
+
+			h3{
+				margin: 0.5em 0;
+				font-family: @font-alt;
+				color: @coffee;
+				text-shadow: 1px 1px 0 @darkGreen;
+
+				&:before{
+					content: "//";
 				}
 			}
 		}
 	}
 
 	@media screen and (min-width: 600px) {
+		.border-radius(4px 4px 0 0);
+
 		div.info{
 
 			ul.columns{

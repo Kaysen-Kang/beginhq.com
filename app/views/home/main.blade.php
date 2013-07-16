@@ -31,6 +31,8 @@
 
 	<div class="main wrap">
 
+		<h2 class="section">Latest News</h2>
+
 		<article>
 			<header>
 				<h2 class="title">First Post In Action!</h2>
@@ -75,15 +77,15 @@
 			<ul class="columns">
 				<li>
 					<h3>Address</h3>
-					<div>Shenzhen, China</div>
+					<p>No. 2077, LianHua Road,<br/>Futian District, Shenzhen,<br/>China</p>
 				</li>
 				<li>
 					<h3>Elsewhere</h3>
-					<div><a href="https://twitter.com/teambegin">Twitter</a> / <a href="http://weibo.com/teambegin">Weibo</a></div>
+					<p>Find us on <a href="https://twitter.com/teambegin">Twitter</a> &amp; <a href="http://weibo.com/teambegin">Weibo</a>!</p>
 				</li>
 				<li>
 					<h3>Contact</h3>
-					<div><a href="mailto:team@beginhq.com">team@beginhq.com</a></div>
+					<div>Say hi to <a href="mailto:team@beginhq.com">team@beginhq.com</a></div>
 				</li>
 			</ul>
 		</div>
