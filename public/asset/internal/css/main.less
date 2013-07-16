@@ -110,12 +110,26 @@
 //main
 
 body {
-	background-color: white;
+	background-color: @paper;
 	color: @coffee;
 	font-family: @font-sans;
-	//background: url(/asset/img/bg.jpg) no-repeat top left;
-	//background-size: cover;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-attachment: fixed;
 
+	&.bg-home{
+		background-image: url(/asset/img/bg_home.jpg);
+	}
+	&.bg-team{
+		background-image: url(/asset/img/bg_team.jpg);
+	}
+	&.bg-project{
+		background-image: url(/asset/img/bg_project.jpg);
+	}
+	&.bg-contact{
+		background-image: url(/asset/img/bg_contact.jpg);
+	}
 }
 
 header.top {
@@ -394,7 +408,6 @@ div.main{
 }
 
 footer{
-	margin-top: 2em !important;
 	overflow: hidden;
 	.background-playground(@paper, darken(@paper, 3%));
 
@@ -458,6 +471,7 @@ footer{
 	}
 
 	@media screen and (min-width: 600px) {
+		margin-top: 2em !important;
 		border-top: 3px solid @grey;
 		.border-radius(4px 4px 0 0);
 

@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="/asset/css/main-0.0.1.css">
 	<title>Begin* HQ</title>
 </head>
-<body>
+<body class="bg-contact">
 	<header class="top wrap">
 		<div class="header">
 			<a href="/" title="back home">
