@@ -106,14 +106,16 @@
 
 }
 
+
 //main
 
 body {
 	background-color: white;
 	color: @coffee;
 	font-family: @font-sans;
-	background: url(/asset/img/bg.jpg) no-repeat top left;
-	background-size: cover;
+	//background: url(/asset/img/bg.jpg) no-repeat top left;
+	//background-size: cover;
+
 }
 
 header.top {
@@ -350,6 +352,7 @@ div.main{
 			border-color: darken(@paper, 20%) darken(@paper, 10%); //need to match :after border color
 			border-style: solid;
 			.box-shadow(-2px 2px 2px 0 fadeout(black, 70%));
+			.transition(border-width .5s ease-out .5s);
 		}
 
 		&:after{
@@ -376,6 +379,12 @@ div.main{
 				color: @grey;
 			}
 		}
+
+		&:hover{
+			&:before{
+				border-width: 10px 0 0 10px;
+			}
+		}
 	}
 
 	@media screen and (min-width: 600px) {
@@ -387,7 +396,7 @@ div.main{
 footer{
 	margin-top: 2em !important;
 	overflow: hidden;
-	.background-playground(@paper, darken(@paper, 5%));
+	.background-playground(@paper, darken(@paper, 3%));
 
 	a{
 		color: darken(@darkGreen, 20%);
