@@ -73,21 +73,22 @@
 	</div>
 
 	<footer class="wrap">
-		<div class="info">
-			<ul class="columns">
-				<li>
-					<h3>Address</h3>
-					<p>No. 2077, LianHua Road,<br/>Futian District, Shenzhen,<br/>China</p>
-				</li>
-				<li>
-					<h3>Elsewhere</h3>
-					<p>Find us on <a href="https://twitter.com/teambegin">Twitter</a> &amp; <a href="http://weibo.com/teambegin">Weibo</a>!</p>
-				</li>
-				<li>
-					<h3>Contact</h3>
-					<div>Say hi to <a href="mailto:team@beginhq.com">team@beginhq.com</a></div>
-				</li>
-			</ul>
+		<ul class="columns">
+			<li>
+				<h3>Address</h3>
+				<p>No.2077 LianHua Road,<br> FuTian District, Shenzhen,<br> P.R. China</p>
+			</li>
+			<li>
+				<h3>Contact</h3>
+				<p>Say hi to <a href="mailto:team@beginhq.com">team@beginhq.com</a></p>
+			</li>
+			<li>
+				<h3>Elsewhere</h3>
+				<p>Find us on <a href="https://twitter.com/teambegin">Twitter</a> &amp; <a href="http://weibo.com/teambegin">Weibo</a>!</p>
+			</li>
+		</ul>
+		<div class="copyright">
+			<p>&copy; 2013 Begin* Studio | <a href="https://github.com/BeginHQ">Source on Github</a></p>
 		</div>
 	</footer>
 </body>

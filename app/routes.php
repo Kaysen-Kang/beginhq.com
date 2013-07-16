@@ -20,17 +20,8 @@ Route::get('/', function()
 
 Route::get('/home', 'HomeController@welcomeHome');
 Route::get('/team', 'HomeController@welcomeHome');
-
-
-Route::get('/project', function()
-{
-    return 'project';
-});
-
-Route::get('/contact', function()
-{
-    return 'contact';
-});
+Route::get('/project', 'HomeController@welcomeHome');
+Route::get('/contact', 'HomeController@welcomeHome');
 
 #admin login
 

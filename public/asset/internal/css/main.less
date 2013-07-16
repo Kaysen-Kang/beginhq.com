@@ -389,6 +389,15 @@ footer{
 	overflow: hidden;
 	.background-playground(@paper, darken(@paper, 5%));
 
+	a{
+		color: darken(@darkGreen, 20%);
+		text-decoration: none;
+
+		&:hover, &:focus{
+			text-decoration: underline;
+		}
+	}
+
 	ul.columns{
 		list-style: none;
 		padding: 0;
@@ -402,15 +411,7 @@ footer{
 
 			p{
 				margin: 0;
-			}
-
-			a{
-				color: darken(@darkGreen, 20%);
-				text-decoration: none;
-
-				&:hover, &:focus{
-					text-decoration: underline;
-				}
+				.font(1.125);
 			}
 
 			h3{
@@ -426,20 +427,39 @@ footer{
 		}
 	}
 
+	.copyright{
+		color: darken(@paper, 30%);
+		margin: 0.25em 1em;
+		border-top: 1px solid darken(@paper, 20%);
+		.box-shadow(inset 0 1px 0 0 lighten(@paper, 10%));
+	}
+
+	@media screen and (min-width: 450px) {
+
+		ul.columns{
+
+			> li{
+				float: left;
+				width: 50%;
+				.box-sizing(border-box);
+			}
+			
+		}
+
+	}
+
 	@media screen and (min-width: 600px) {
+		border-top: 3px solid @grey;
 		.border-radius(4px 4px 0 0);
 
-		div.info{
+		ul.columns{
 
-			ul.columns{
-
-				> li{
-					float: left;
-					width: 33%;
-					.box-sizing(border-box);
-				}
+			> li{
+				width: 33%;
 			}
+
 		}
+
 	}
 
 }
