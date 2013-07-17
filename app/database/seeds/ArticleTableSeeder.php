@@ -10,8 +10,9 @@ class ArticleTableSeeder extends Seeder {
 
 		Article::create(array(
 			'title'		=> 'First Title',
-			'author'	=> 'beginhq',
-			'content'	=> 'Article Content'
+			'date'      => '2013-07-17',
+			'author'	=> 'David Frank',
+			'content'	=> '<h3>section</h3><p>test string.</p>'
 		));
 	}
 }

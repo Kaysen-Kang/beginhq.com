@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Article;
+
 class HomeController extends BaseController {
 
 	/*
@@ -29,8 +31,9 @@ class HomeController extends BaseController {
 		//at home, show articles
 		if($data['route'] == 'home') {
 
-			$news = [];
+			$news = Article::all();
 			$data['news'] = $news;
+
 		}
 
 		return View::make('home.'.$data['route'], $data);
