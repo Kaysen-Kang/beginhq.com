@@ -1,5 +1,5 @@
 @extends('home.main')
 
 @section('intro')
-	<p>We build services with 3 pillars in mind: <br><span>Mobility</span>, <span>Usability</span> &amp; <span>Simplicity</span></p>
+	<p>We came together with a common goal: <br><span>Build services that delight others</span>.</p>
 @stop

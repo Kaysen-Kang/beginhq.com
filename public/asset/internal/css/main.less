@@ -109,6 +109,7 @@
 }
 
 .wrap{
+	min-width: 320px;
 	max-width: 800px;
 	margin: 0 auto;
 }
@@ -322,11 +323,20 @@ div.intro{
 		font-family: @font-alt;
 		line-height: 2.5;
 		text-shadow: 1px 1px 0 darken(@grey, 10%);
-		.font(1.125);
+		.font(1);
 
 		span{
-			.font(1.75);
-			text-shadow: 1px 1px 0 darken(@grey, 10%);
+			.font(1.5);
+		}
+	}
+
+	@media screen and (min-width: 450px) {
+		p{
+			.font(1.25);
+
+			span{
+				.font(1.75);
+			}
 		}
 	}
 

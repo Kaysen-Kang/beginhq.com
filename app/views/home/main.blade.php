@@ -24,7 +24,7 @@
 		</nav>
 	</header>
 
-	<div class="intro">
+	<div class="intro wrap">
 		@section('intro')
 		@show
 	</div>
