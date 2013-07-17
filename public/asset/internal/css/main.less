@@ -141,6 +141,14 @@ body {
 		background-image: url(/asset/img/bg_blog.jpg);
 	}
 
+	@media screen and (min-width: 800px) {
+		background-size: cover;
+	}
+
+	@media screen and (min-width: 1400px) {
+		background-attachment: scroll;
+	}
+
 }
 
 header.top {
@@ -322,7 +330,7 @@ div.intro{
 		color: white;
 		font-family: @font-alt;
 		line-height: 2.5;
-		text-shadow: 1px 1px 0 darken(@grey, 10%);
+		text-shadow: 1px 1px 0 darken(@grey, 10%), 0 0 6px fadeout(black, 50%);
 		.font(1);
 
 		span{
@@ -360,8 +368,10 @@ div.main{
 	
 	h2.section{
 		margin: 1em;
-		color: @grey;
+		color: @paper;
+		text-shadow: 1px 1px 0 @grey;
 		font-family: @font-alt;
+		font-weight: normal;
 
 		&:before{
 			content: "//";

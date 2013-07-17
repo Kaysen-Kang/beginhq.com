@@ -31,45 +31,24 @@
 
 	<div class="main wrap">
 
-		<h2 class="section">Latest News</h2>
+		@section('subtitle')
+		@show
 
-		<article>
-			<header>
-				<h2 class="title">First Post In Action!</h2>
-				<span class="date">2013-07-04</span>
-			</header>
+		@if(isset($news))
+			@foreach ($news as $article)
+				<article>
+					<header>
+						<h2 class="title">{{ $article->title }}</h2>
+						<span class="date">{{ $article->date }}</span>
+					</header>
 
-			<div class="content">
-				<h3>section1</h3>
+					<div class="content">
+						{{ $article->content }}
+					</div>
+				</article>
+			@endforeach
+		@endif
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, dolorum, nihil, excepturi cumque iusto sit voluptatibus quidem illum asperiores labore odio at id repudiandae facere expedita voluptatum earum perspiciatis vitae!</p>
-
-				<h3>section2</h3>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, tempore facilis nesciunt voluptatum vero eum vel animi. Laborum, natus minima at voluptate amet veniam tempora nam ullam autem voluptates accusamus.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, neque, ut, nobis quod architecto autem nostrum quos quas quam quasi dolore ipsum fugiat rem alias repellat? Nulla, facere a doloribus.</p>
-			</div>
-		</article>
-
-		<article>
-			<header>
-				<h2 class="title">Second Post Incoming!</h2>
-				<span class="date">2013-07-05</span>
-			</header>
-
-			<div class="content">
-				<h3>section1</h3>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, dolorum, nihil, excepturi cumque iusto sit voluptatibus quidem illum asperiores labore odio at id repudiandae facere expedita voluptatum earum perspiciatis vitae!</p>
-
-				<h3>section2</h3>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, tempore facilis nesciunt voluptatum vero eum vel animi. Laborum, natus minima at voluptate amet veniam tempora nam ullam autem voluptates accusamus.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, neque, ut, nobis quod architecto autem nostrum quos quas quam quasi dolore ipsum fugiat rem alias repellat? Nulla, facere a doloribus.</p>
-			</div>
-		</article>
 	</div>
 
 	<footer class="wrap">
