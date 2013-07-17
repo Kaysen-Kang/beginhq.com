@@ -19,7 +19,14 @@ class HomeController extends BaseController {
 	{
 		$route = explode(' /', Route::currentRouteName());
 
-		return View::make('home.'.$route[1]);
+		//make home as default
+		if(!$route[1])
+			$route[1] = 'home';
+
+		$data = [];
+		$data['route'] = $route[1];
+
+		return View::make('home.'.$route[1], $data);
 	}
 
 }

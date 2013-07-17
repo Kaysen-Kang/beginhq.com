@@ -13,11 +13,7 @@
 
 #mostly static external-facing paging
 
-Route::get('/', function()
-{
-    return 'root';
-});
-
+Route::get('/', 'HomeController@welcomeHome');
 Route::get('/home', 'HomeController@welcomeHome');
 Route::get('/team', 'HomeController@welcomeHome');
 Route::get('/project', 'HomeController@welcomeHome');

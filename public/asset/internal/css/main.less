@@ -12,17 +12,6 @@
 }
 
 @font-face{
-    font-family: 'OswaldLight';
-    src: url('/asset/fonts/Oswald-Light-webfont.eot');
-    src: url('/asset/fonts/Oswald-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/asset/fonts/Oswald-Light-webfont.woff') format('woff'),
-         url('/asset/fonts/Oswald-Light-webfont.ttf') format('truetype'),
-         url('/asset/fonts/Oswald-Light-webfont.svg#EntypoCustom') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face{
     font-family: 'RobotoCondensed';
     src: url('/asset/fonts/Roboto-Condensed-webfont.eot');
     src: url('/asset/fonts/Roboto-Condensed-webfont.eot?#iefix') format('embedded-opentype'),
@@ -87,12 +76,25 @@
 	transition: @props;
 }
 
-.wrap{
-	max-width: 800px;
-	margin: 0 auto;
-}
-
 .background-playground(@color, @crossColor) {
+
+	background: 
+	-o-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
+	-o-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
+	-o-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
+	-o-linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
+
+	background: 
+	-moz-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
+	-moz-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
+	-moz-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
+	-moz-linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
+
+	background: 
+	-webkit-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
+	-webkit-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
+	-webkit-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
+	-webkit-linear-gradient(0deg, @crossColor 8px, transparent 8px) -4px 0;
 
 	background: 
 	radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
@@ -106,6 +108,10 @@
 
 }
 
+.wrap{
+	max-width: 800px;
+	margin: 0 auto;
+}
 
 //main
 
@@ -130,11 +136,15 @@ body {
 	&.bg-contact{
 		background-image: url(/asset/img/bg_contact.jpg);
 	}
+	&.bg-blog{
+		background-image: url(/asset/img/bg_blog.jpg);
+	}
+
 }
 
 header.top {
 	position: relative;
-	background-color: fadeout(@paper, 20%);
+	background-color: fadeout(@paper, 10%);
 	overflow: hidden;
 
 	a{
@@ -179,8 +189,8 @@ header.top {
 			text-shadow: -1px -1px 0 darken(@darkGreen, 10%);
 
 			&.small{
-				color: darken(@green, 10%);
-				text-shadow: 1px 1px 0 lighten(@darkGreen, 30%);
+				color: darken(@darkGreen, 15%);
+				text-shadow: 1px 1px 0 lighten(@darkGreen, 25%);
 			}
 
 			&.border{
@@ -362,11 +372,11 @@ div.main{
 			right: 0;
 			width: 0;
 			height: 0;
-			border-width: 30px 0 0 30px;
+			border-width: 40px 0 0 40px;
 			border-color: darken(@paper, 20%) darken(@paper, 10%); //need to match :after border color
 			border-style: solid;
 			.box-shadow(-2px 2px 2px 0 fadeout(black, 70%));
-			.transition(border-width .5s ease-out .5s);
+			.transition(border-width .5s cubic-bezier(.06,.94,.41,.93) .5s);
 		}
 
 		&:after{
@@ -409,7 +419,8 @@ div.main{
 
 footer{
 	overflow: hidden;
-	.background-playground(@paper, darken(@paper, 3%));
+	border-top: 3px solid lighten(@grey, 20%);
+	.background-playground(darken(@paper, 5%), darken(@paper, 8%));
 
 	a{
 		color: darken(@darkGreen, 20%);
@@ -470,10 +481,7 @@ footer{
 
 	}
 
-	@media screen and (min-width: 600px) {
-		margin-top: 2em !important;
-		border-top: 3px solid @grey;
-		.border-radius(4px 4px 0 0);
+	@media screen and (min-width: 650px) {
 
 		ul.columns{
 
@@ -482,6 +490,16 @@ footer{
 			}
 
 		}
+
+
+	}
+
+	@media screen and (min-width: 800px) {
+
+		border-top: 3px solid @grey;
+		.border-radius(4px 4px 0 0);
+		margin-top: 2em !important;
+
 
 	}
 
