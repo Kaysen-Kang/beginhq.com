@@ -19,9 +19,12 @@ Route::get('/team', 'HomeController@welcomeHome');
 Route::get('/project', 'HomeController@welcomeHome');
 Route::get('/contact', 'HomeController@welcomeHome');
 
-#publishing system
+#publishing system, auth required
 
-Route::resource('publish', 'publishController');
+Route::group(array('before' => 'auth.basic'), function()
+{
+	Route::resource('publish', 'publishController');
+});
 
 /*
 

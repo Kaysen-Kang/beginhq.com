@@ -31,7 +31,8 @@ class HomeController extends BaseController {
 		//at home, show articles
 		if($data['route'] == 'home') {
 
-			$news = Article::all();
+			//being lazy here, should be in model
+			$news = Article::orderBy('id', 'desc')->take(2)->get();
 			$data['news'] = $news;
 
 		}

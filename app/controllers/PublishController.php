@@ -21,7 +21,7 @@ class PublishController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('publish.create');
 	}
 
 	/**
@@ -31,7 +31,28 @@ class PublishController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+			'title'		=> 'required',
+			'author'	=> 'required',
+			'content'	=> 'required|min:50'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::route('publish.create')->withInput()->withErrors($validator);
+		}
+
+		$article = new Article;
+		$article->title = Input::get('title');
+		$article->author = Input::get('author');
+		$article->content = Input::get('content');
+		$article->save();
+
+		Notification::success("The article '$article->title' was saved.");
+
+		return Redirect::route('admin.articles.index');
 	}
 
 	/**
@@ -42,7 +63,7 @@ class PublishController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('publish.show')->with('article', Article::find($id));
 	}
 
 	/**
@@ -53,7 +74,7 @@ class PublishController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('publish.edit')->with('article', Article::find($id));
 	}
 
 	/**
@@ -64,7 +85,28 @@ class PublishController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+			'title'		=> 'required',
+			'author'	=> 'required',
+			'content'	=> 'required|min:50',
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::route('publish.create')->withInput()->withErrors($validator);
+		}
+
+		$article = Article::find($id);
+		$article->title = Input::get('title');
+		$article->author = Input::get('author');
+		$article->content = Input::get('content');
+		$article->save();
+
+		Notification::success("The article '$article->title' was saved.");
+
+		return Redirect::route('publish.index');
 	}
 
 	/**
@@ -75,7 +117,12 @@ class PublishController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$article = Article::find($id);
+		$article->delete();
+
+		Notification::success("The article was delete.");
+
+		return Redirect::route('publish.index');
 	}
 
 }

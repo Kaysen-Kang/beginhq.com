@@ -79,16 +79,3 @@ Route::filter('csrf', function()
 	}
 });
 
-/*
-
-//custom login filter
-
-Route::filter('auth.admin', function()
-{
-	if (!Session::get('auth_user'))
-	{
-		return Redirect::route('admin.login');
-	}
-});
-
-*/

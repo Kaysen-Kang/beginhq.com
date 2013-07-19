@@ -656,6 +656,7 @@ div.main article:after {
 }
 div.main article header {
   border-bottom: 1px solid #d8cdbc;
+  margin-bottom: 0.5em;
 }
 div.main article header h2.title {
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
@@ -752,41 +753,88 @@ footer .copyright {
   }
 }
 /* publishing interface */
-table {
+div.main table {
   width: 100%;
 }
-table th {
+div.main table a {
+  color: #589467;
+  text-decoration: none;
+}
+div.main table a:hover,
+div.main table a:focus {
+  text-decoration: underline;
+}
+div.main table th {
   font-weight: normal;
   font-size: 20px;
   font-size: 1.25rem;
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
 }
-table th,
-table td {
+div.main table th,
+div.main table td {
   padding: 0.25em;
 }
-table.striped thead tr {
+div.main table.striped thead tr {
   background-color: #cfc1ab;
   color: #f4f1ec;
   text-shadow: 1px 1px 0 #a9926b;
   text-align: left;
 }
-table.striped tbody tr {
+div.main table.striped tbody tr {
   background-color: #e9e3d9;
   color: #8c8474;
 }
-table.striped tbody tr:nth-child(even) {
+div.main table.striped tbody tr:nth-child(even) {
   background-color: #f0ece6;
 }
-table.striped a {
-  color: #589467;
-  text-decoration: none;
-}
-table.striped a:hover,
-table.striped a:focus {
-  text-decoration: underline;
-}
-table.col5 th,
-table.col5 th {
+div.main table.col5 th,
+div.main table.col5 th {
   width: 20%;
+}
+div.main div.publish-article {
+  width: 90%;
+  margin: 0.5em auto;
+}
+div.main div.publish-article label,
+div.main div.publish-article input[type=text],
+div.main div.publish-article textarea {
+  display: block;
+}
+div.main div.publish-article label {
+  color: #8c8474;
+  margin: 0.25em 0;
+}
+div.main div.publish-article input[type=text],
+div.main div.publish-article textarea {
+  width: 100%;
+}
+div.main span.error {
+  color: rgba(255, 0, 0, 0.5);
+}
+div.main span.notice {
+  color: rgba(0, 0, 255, 0.5);
+}
+div.main form.inline {
+  display: inline-block;
+}
+div.main input[type=submit],
+div.main button,
+div.main a.button,
+div.main a.cancel {
+  margin-top: 0.25em;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #40362e;
+  padding: 0.5em;
+  border: 0;
+  background: #40362e;
+  color: #f4f1ec;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+div.main input[type=submit]:hover,
+div.main button:hover,
+div.main a.button:hover,
+div.main a.cancel:hover {
+  background: #7b6859;
 }

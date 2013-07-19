@@ -414,6 +414,7 @@ div.main{
 
 		header{
 			border-bottom: 1px solid darken(@paper, 15%);
+			margin-bottom: 0.5em;
 
 			h2.title{
 				font-family: @font-alt;
@@ -527,36 +528,10 @@ footer{
 
 /* publishing interface */
 
-table{
-	width: 100%;
+div.main{
 
-	th{
-		font-weight: normal;
-		.font(1.25);
-		font-family: @font-alt;
-	}
-
-	th, td{
-		padding: 0.25em;
-	}
-
-
-	&.striped{
-		thead tr{
-			background-color: darken(@paper, 20%);
-			color: @paper;
-			text-shadow: 1px 1px 0 darken(@paper, 40%);
-			text-align: left;
-		}
-
-		tbody tr{
-			background-color: darken(@paper, 6%);
-			color: @grey;
-
-			&:nth-child(even){
-				background-color: darken(@paper, 2%);
-			}
-		}
+	table{
+		width: 100%;
 
 		a{
 			color: darken(@darkGreen, 20%);
@@ -567,12 +542,88 @@ table{
 			}
 		}
 
-	}
+		th{
+			font-weight: normal;
+			.font(1.25);
+			font-family: @font-alt;
+		}
 
-	&.col5{
-		th, th{
-			width: 20%;
+		th, td{
+			padding: 0.25em;
+		}
+
+
+		&.striped{
+			thead tr{
+				background-color: darken(@paper, 20%);
+				color: @paper;
+				text-shadow: 1px 1px 0 darken(@paper, 40%);
+				text-align: left;
+			}
+
+			tbody tr{
+				background-color: darken(@paper, 6%);
+				color: @grey;
+
+				&:nth-child(even){
+					background-color: darken(@paper, 2%);
+				}
+			}
+
+		}
+
+		&.col5{
+			th, th{
+				width: 20%;
+			}
 		}
 	}
-}
 
+	div.publish-article{
+		width: 90%;
+		margin: 0.5em auto;
+
+		label, input[type=text], textarea{
+			display: block;
+		}
+
+		label{
+			color: @grey;
+			margin: 0.25em 0;
+		}
+
+		input[type=text], textarea{
+			width: 100%;
+		}
+
+	}
+
+	span.error{
+		color: fadeout(red, 50%);
+	}
+
+	span.notice{
+		color: fadeout(blue, 50%);
+	}
+
+	form.inline{
+		display: inline-block;
+	}
+
+	input[type=submit], button, a.button, a.cancel{
+		margin-top: 0.25em;
+		display: inline-block;
+		text-decoration: none;
+		text-shadow: 1px 1px 0 @coffee;
+		padding: 0.5em;
+		border: 0;
+		background: @coffee;
+		color: @paper;
+		.font(1.125);
+
+		&:hover{
+			background: lighten(@coffee, 20%);
+		}
+	}
+
+}
