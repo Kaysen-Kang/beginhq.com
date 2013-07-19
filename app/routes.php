@@ -29,8 +29,8 @@ Route::group(array('before' => 'oauth'), function()
 #oauth login
 
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/auth/{provider}', 'App\Controllers\Admin\AuthController@actionSession');
 Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
+Route::get('admin/auth/{provider}', 'App\Controllers\Admin\AuthController@actionSession');
 
 /*
 
