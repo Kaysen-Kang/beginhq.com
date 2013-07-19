@@ -19,6 +19,12 @@ Route::get('/team', 'HomeController@welcomeHome');
 Route::get('/project', 'HomeController@welcomeHome');
 Route::get('/contact', 'HomeController@welcomeHome');
 
+#publishing system
+
+Route::resource('publish', 'publishController');
+
+/*
+
 #admin login
 
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
@@ -34,3 +40,5 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 
 Route::get('mail/send', 'Mailcontroller@getSend');
 Route::post('mail/send', array('as' => 'mail.send', 'uses' => "Mailcontroller@sendMail"));
+
+*/

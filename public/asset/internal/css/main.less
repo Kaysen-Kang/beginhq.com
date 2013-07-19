@@ -525,3 +525,54 @@ footer{
 
 }
 
+/* publishing interface */
+
+table{
+	width: 100%;
+
+	th{
+		font-weight: normal;
+		.font(1.25);
+		font-family: @font-alt;
+	}
+
+	th, td{
+		padding: 0.25em;
+	}
+
+
+	&.striped{
+		thead tr{
+			background-color: darken(@paper, 20%);
+			color: @paper;
+			text-shadow: 1px 1px 0 darken(@paper, 40%);
+			text-align: left;
+		}
+
+		tbody tr{
+			background-color: darken(@paper, 6%);
+			color: @grey;
+
+			&:nth-child(even){
+				background-color: darken(@paper, 2%);
+			}
+		}
+
+		a{
+			color: darken(@darkGreen, 20%);
+			text-decoration: none;
+
+			&:hover, &:focus{
+				text-decoration: underline;
+			}
+		}
+
+	}
+
+	&.col5{
+		th, th{
+			width: 20%;
+		}
+	}
+}
+
