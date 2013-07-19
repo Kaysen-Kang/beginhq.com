@@ -9,7 +9,7 @@ class UserTableSeeder extends Seeder {
 
 		User::create(array(
 			'vendor' 	=> 'google',
-			'user_id'	=> '106293321368143321434'
+			'user_id'	=> 'your id'
  		));
 	}
 }

@@ -43,7 +43,7 @@
 					</header>
 
 					<div class="content">
-						{{ $article->content }}
+						{{ Markdown::string($article->content) }}
 					</div>
 				</article>
 			@endforeach

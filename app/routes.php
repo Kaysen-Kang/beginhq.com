@@ -21,25 +21,18 @@ Route::get('/contact', 'HomeController@welcomeHome');
 
 #publishing system, auth required
 
-Route::group(array('before' => 'auth.basic'), function()
+Route::group(array('before' => 'oauth'), function()
 {
 	Route::resource('publish', 'publishController');
 });
 
-/*
-
-#admin login
+#oauth login
 
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/auth/{provider}', 'App\Controllers\Admin\AuthController@actionSession');
 Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
-{
-	Route::any('/', 'App\Controllers\Admin\ArticlesController@index');
-	Route::resource('articles', "App\Controllers\Admin\ArticlesController");
-});
 
-#email contact
+/*
 
 Route::get('mail/send', 'Mailcontroller@getSend');
 Route::post('mail/send', array('as' => 'mail.send', 'uses' => "Mailcontroller@sendMail"));

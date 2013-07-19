@@ -6,11 +6,11 @@
 	<article>
 		<header>
 			<h2 class="title">{{ $article->title }}</h2>
-			<span class="date">{{ $article->date }}</span>
+			<span class="date">{{ $article->timestamp }}</span>
 		</header>
 
 		<div class="content">
-			{{ $article->content }}
+			{{ Markdown::string($article->content) }}
 		</div>
 	</article>
 @stop
