@@ -23,7 +23,7 @@ Route::get('/contact', 'HomeController@welcomeHome');
 
 Route::group(array('before' => 'oauth'), function()
 {
-	Route::resource('publish', 'publishController');
+	Route::resource('publish', 'PublishController');
 });
 
 #oauth login
