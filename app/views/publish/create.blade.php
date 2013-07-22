@@ -1,5 +1,9 @@
 @extends('publish.base')
 
+@section('intro')
+	<span>YES</span>
+@stop
+
 @section('main')
 	<h2 class="section">Create a new Post</h2>
 

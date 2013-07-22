@@ -79,13 +79,13 @@ Route::filter('csrf', function()
 	}
 });
 
-//custom login filter
+//custom oauth login filter
 
 Route::filter('oauth', function()
 {
 	if (!Session::get('auth_user'))
 	{
-		return Redirect::route('admin.login');
+		return Redirect::route('login');
 	}
 });
 

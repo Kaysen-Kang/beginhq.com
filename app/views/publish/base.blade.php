@@ -25,7 +25,12 @@
 	</header>
 
 	<div class="intro wrap">
-		<p>Checking... Are you an Admin?<br> <span>YES</span></p>
+		<p>
+			Checking... Are you an Admin?
+			<br>
+			@section('intro')
+			@show
+		</p>
 	</div>	
 
 	<div class="main wrap">

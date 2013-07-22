@@ -605,6 +605,14 @@ div.main {
   background-color: rgba(242, 240, 213, 0.6);
   overflow: hidden;
 }
+div.main a {
+  color: #589467;
+  text-decoration: none;
+}
+div.main a:hover,
+div.main a:focus {
+  text-decoration: underline;
+}
 div.main h2.section {
   margin: 1em;
   color: #f4f1ec;

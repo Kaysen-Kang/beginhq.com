@@ -366,6 +366,15 @@ div.main{
 	background-color: fadeout(@light, 40%);
 	overflow: hidden;
 	
+	a{
+		color: darken(@darkGreen, 20%);
+		text-decoration: none;
+
+		&:hover, &:focus{
+			text-decoration: underline;
+		}
+	}
+	
 	h2.section{
 		margin: 1em;
 		color: @paper;
