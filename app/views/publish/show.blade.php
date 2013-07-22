@@ -10,7 +10,7 @@
 	<article>
 		<header>
 			<h2 class="title">{{ $article->title }}</h2>
-			<span class="date">{{ $article->timestamp }}</span>
+			<span class="date">{{ $article->created_at }}</span>
 		</header>
 
 		<div class="content">
