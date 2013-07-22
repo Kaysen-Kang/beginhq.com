@@ -21,7 +21,7 @@ Route::get('/project', 'HomeController@welcomeHome');
 #contact page
 
 Route::get('/contact', array('as' => 'contact', 'uses' => 'HomeController@welcomeHome'));
-Route::post('/contact', array('as' => 'mail', 'uses' => 'Mailcontroller@send'));
+Route::post('/contact', array('as' => 'mail', 'uses' => 'MailController@send'));
 
 #publishing system, auth required
 

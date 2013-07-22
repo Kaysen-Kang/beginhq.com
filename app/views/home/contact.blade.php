@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('content', 'Content') }}
+				{{ Form::label('content', 'Message') }}
 				<div class="controls">
 					{{ Form::textarea('content')}}
 					<span class="error">{{ $errors->first('content') }}</span>
