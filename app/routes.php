@@ -33,12 +33,19 @@ Route::get('/login', array('as' => 'login', 'uses' => 'OAuthController@login'));
 Route::get('/auth/{provider}', 'OAuthController@authorize');
 
 /*
+
+#oauth login (old)
+
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 Route::get('admin/auth/{provider}', 'App\Controllers\Admin\AuthController@actionSession');
+
 */
 
+
 /*
+
+#mail contact
 
 Route::get('mail/send', 'Mailcontroller@getSend');
 Route::post('mail/send', array('as' => 'mail.send', 'uses' => "Mailcontroller@sendMail"));
