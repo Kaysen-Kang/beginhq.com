@@ -39,7 +39,7 @@ class OAuthController extends \BaseController {
                 if ($auth_user)
                 {
                 	Session::put('auth_user', $auth_user);
-                	return Redirect::route('publish');
+                	return Redirect::route('publish.index');
                 }
                 else
                 {
