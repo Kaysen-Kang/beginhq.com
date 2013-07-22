@@ -41,6 +41,8 @@
 				</tbody>
 			</table>
 
+			<p><a class="button" href="{{ URL::route('publish.create') }}">Create</a></p>
+
 		</div>
 
 	</article>
