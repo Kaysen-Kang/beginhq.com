@@ -19,13 +19,11 @@ class HomeController extends BaseController {
 
 	public function welcomeHome()
 	{
-		$route = explode(' /', Route::currentRouteName());
-
 		$data = [];
-		$data['route'] = $route[1];
+		$data['route'] = Request::path();
 
 		//make home as default
-		if(!$data['route'])
+		if(!$data['route'] || $data['route'] == '/')
 			$data['route'] = 'home';
 
 		//at home, show articles

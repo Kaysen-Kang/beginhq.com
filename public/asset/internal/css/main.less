@@ -78,32 +78,34 @@
 
 .background-playground(@color, @crossColor) {
 
-	background: 
-	-o-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
-	-o-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
-	-o-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
-	-o-linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
-
-	background: 
-	-moz-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
-	-moz-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
-	-moz-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
-	-moz-linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
-
-	background: 
-	-webkit-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
-	-webkit-radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
-	-webkit-linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
-	-webkit-linear-gradient(0deg, @crossColor 8px, transparent 8px) -4px 0;
-
-	background: 
-	radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent),
-	radial-gradient(circle, transparent 20%, @color 20%, @color 80%, transparent 80%, transparent) 50px 50px,
-	linear-gradient(@crossColor 8px, transparent 8px) 0 -4px,
-	linear-gradient(90deg, @crossColor 8px, transparent 8px) -4px 0;
-
 	background-color: @color;
-	background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+
+	background-image: 
+	-o-linear-gradient(@crossColor 2px, transparent 2px),
+	-o-linear-gradient(90deg, @crossColor 2px, transparent 2px),
+	-o-linear-gradient(fadeout(@crossColor, 50%) 1px, transparent 1px),
+	-o-linear-gradient(90deg, fadeout(@crossColor, 50%) 1px, transparent 1px);
+
+	background-image: 
+	-moz-linear-gradient(@crossColor 2px, transparent 2px),
+	-moz-linear-gradient(90deg, @crossColor 2px, transparent 2px),
+	-moz-linear-gradient(fadeout(@crossColor, 50%) 1px, transparent 1px),
+	-moz-linear-gradient(90deg, fadeout(@crossColor, 50%) 1px, transparent 1px);
+
+	background-image: 
+	-webkit-linear-gradient(@crossColor 2px, transparent 2px),
+	-webkit-linear-gradient(90deg, @crossColor 2px, transparent 2px),
+	-webkit-linear-gradient(fadeout(@crossColor, 50%) 1px, transparent 1px),
+	-webkit-linear-gradient(90deg, fadeout(@crossColor, 50%) 1px, transparent 1px);
+
+	background-image: 
+	linear-gradient(@crossColor 2px, transparent 2px),
+	linear-gradient(90deg, @crossColor 2px, transparent 2px),
+	linear-gradient(fadeout(@crossColor, 50%) 1px, transparent 1px),
+	linear-gradient(90deg, fadeout(@crossColor, 50%) 1px, transparent 1px);
+
+	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
 	.background-clip(padding-box);
 
 }
@@ -450,7 +452,7 @@ div.main{
 footer{
 	overflow: hidden;
 	border-top: 3px solid lighten(@grey, 20%);
-	.background-playground(darken(@paper, 5%), darken(@paper, 8%));
+	.background-playground(darken(@paper, 5%), @paper);
 
 	a{
 		color: darken(@darkGreen, 20%);

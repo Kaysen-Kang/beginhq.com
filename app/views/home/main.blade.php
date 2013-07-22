@@ -39,7 +39,7 @@
 				<article>
 					<header>
 						<h2 class="title">{{ $article->title }}</h2>
-						<span class="date">{{ $article->date }}</span>
+						<span class="date">{{ date('Y-m-d', $article->created_at->format('U')) }}</span>
 					</header>
 
 					<div class="content">
@@ -48,6 +48,9 @@
 				</article>
 			@endforeach
 		@endif
+
+		@section('static')
+		@show
 
 	</div>
 

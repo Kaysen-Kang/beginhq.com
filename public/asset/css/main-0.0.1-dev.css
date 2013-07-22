@@ -686,12 +686,13 @@ div.main article:hover:before {
 footer {
   overflow: hidden;
   border-top: 3px solid #bab5ac;
-  background: -o-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent), -o-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent) 50px 50px, -o-linear-gradient(#e5ded2 8px, transparent 8px) 0 -4px, -o-linear-gradient(90deg, #e5ded2 8px, transparent 8px) -4px 0;
-  background: -moz-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent), -moz-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent) 50px 50px, -moz-linear-gradient(#e5ded2 8px, transparent 8px) 0 -4px, -moz-linear-gradient(90deg, #e5ded2 8px, transparent 8px) -4px 0;
-  background: -webkit-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent), -webkit-radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent) 50px 50px, -webkit-linear-gradient(#e5ded2 8px, transparent 8px) 0 -4px, -webkit-linear-gradient(0deg, #e5ded2 8px, transparent 8px) -4px 0;
-  background: radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #ebe5dc 20%, #ebe5dc 80%, transparent 80%, transparent) 50px 50px, linear-gradient(#e5ded2 8px, transparent 8px) 0 -4px, linear-gradient(90deg, #e5ded2 8px, transparent 8px) -4px 0;
   background-color: #ebe5dc;
-  background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  background-image: -o-linear-gradient(#f4f1ec 2px, transparent 2px), -o-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -o-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -o-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
+  background-image: -moz-linear-gradient(#f4f1ec 2px, transparent 2px), -moz-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -moz-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -moz-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(#f4f1ec 2px, transparent 2px), -webkit-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -webkit-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -webkit-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
+  background-image: linear-gradient(#f4f1ec 2px, transparent 2px), linear-gradient(90deg, #f4f1ec 2px, transparent 2px), linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
