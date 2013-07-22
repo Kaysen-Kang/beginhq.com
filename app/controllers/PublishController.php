@@ -52,7 +52,7 @@ class PublishController extends \BaseController {
 
 		Notification::success("The article '$article->title' was saved.");
 
-		return Redirect::route('admin.articles.index');
+		return Redirect::route('publish.index');
 	}
 
 	/**
