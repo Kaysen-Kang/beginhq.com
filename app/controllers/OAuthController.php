@@ -64,7 +64,7 @@ class OAuthController extends \BaseController {
 
 	public function logout()
 	{
-		Session::forget('admin_user');
+		Session::forget('auth_user');
 		Notification::success('Log out done.');
 		return Redirect::route('login');
 	}
