@@ -16,9 +16,9 @@
 
 		<nav>
 			<ul class="menu">
-				<li><a href="/team">Team</a></li>
-				<li><a href="/project">Project</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="/team" class="@if($route == 'team') active @endif">Team</a></li>
+				<li><a href="/project" class="@if($route == 'project') active @endif">Project</a></li>
+				<li><a href="/contact" class="@if($route == 'contact') active @endif">Contact</a></li>
 				<li><a href="http://story.beginhq.com/">Story</a></li>
 			</ul>
 		</nav>

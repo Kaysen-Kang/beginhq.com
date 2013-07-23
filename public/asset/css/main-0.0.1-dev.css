@@ -436,8 +436,8 @@ header.top div.header .tagline {
   margin: 0;
   text-align: center;
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 21.2px;
+  font-size: 1.325rem;
   opacity: 0;
   position: relative;
   top: -20px;
@@ -565,6 +565,7 @@ header.top nav ul.menu li a.active {
 div.intro {
   overflow: hidden;
   text-align: center;
+  background-color: rgba(147, 191, 158, 0.4);
 }
 div.intro p {
   color: white;
@@ -589,6 +590,9 @@ div.intro p span {
   }
 }
 @media screen and (min-width: 550px) {
+  div.intro {
+    background-color: transparent;
+  }
   div.intro p {
     line-height: 2;
     font-size: 24px;
@@ -615,8 +619,8 @@ div.main a:focus {
 }
 div.main h2.section {
   margin: 1em;
-  color: #f4f1ec;
-  text-shadow: 1px 1px 0 #8c8474;
+  color: #706a5d;
+  text-shadow: 0 1px 1px #f8f7e8;
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
 }
@@ -685,25 +689,11 @@ div.main article:hover:before {
 }
 footer {
   overflow: hidden;
-  border-top: 3px solid #bab5ac;
-  background-color: #ebe5dc;
-  background-image: -o-linear-gradient(#f4f1ec 2px, transparent 2px), -o-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -o-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -o-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
-  background-image: -moz-linear-gradient(#f4f1ec 2px, transparent 2px), -moz-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -moz-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -moz-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
-  background-image: -webkit-linear-gradient(#f4f1ec 2px, transparent 2px), -webkit-linear-gradient(90deg, #f4f1ec 2px, transparent 2px), -webkit-linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), -webkit-linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
-  background-image: linear-gradient(#f4f1ec 2px, transparent 2px), linear-gradient(90deg, #f4f1ec 2px, transparent 2px), linear-gradient(rgba(244, 241, 236, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 241, 236, 0.5) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
-  background-clip: padding-box;
+  color: #ebf7ee;
+  background-color: rgba(51, 125, 69, 0.19999999999999996);
 }
 footer a {
-  color: #589467;
-  text-decoration: none;
-}
-footer a:hover,
-footer a:focus {
-  text-decoration: underline;
+  color: white;
 }
 footer ul.columns {
   list-style: none;
@@ -714,29 +704,32 @@ footer ul.columns {
 footer ul.columns > li {
   display: block;
   padding: 1em;
-  color: #8c8474;
 }
 footer ul.columns > li p {
   margin: 0;
   font-size: 18px;
   font-size: 1.125rem;
+  text-shadow: 1px 1px 1px #4e845c;
 }
 footer ul.columns > li h3 {
   margin: 0.5em 0;
+  display: inline-block;
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
-  color: #40362e;
-  text-shadow: 1px 1px 0 #93bf9e;
+  font-weight: normal;
+  color: #42a159;
+  border-bottom: 2px solid rgba(0, 128, 0, 0.09999999999999998);
 }
-footer ul.columns > li h3:before {
-  content: "//";
+footer ul.columns > li:hover h3 {
+  color: black;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 footer .copyright {
-  color: #bcaa8b;
+  color: #42a159;
   margin: 0.25em 1em;
-  border-top: 1px solid #cfc1ab;
-  -webkit-box-shadow: inset 0 1px 0 0 #ffffff;
-  -moz-box-shadow: inset 0 1px 0 0 #ffffff;
-  box-shadow: inset 0 1px 0 0 #ffffff;
+  border-top: 1px dashed #42a159;
+}
+footer .copyright a {
+  color: #42a159;
 }
 @media screen and (min-width: 450px) {
   footer ul.columns > li {
@@ -754,10 +747,9 @@ footer .copyright {
 }
 @media screen and (min-width: 800px) {
   footer {
-    border-top: 3px solid #8c8474;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     margin-top: 2em !important;
   }
 }
