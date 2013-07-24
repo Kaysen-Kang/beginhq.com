@@ -391,7 +391,7 @@ body.bg-contact {
 body.bg-blog {
   background-image: url(/asset/img/bg_blog.jpg);
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   body {
     background-size: cover;
   }
@@ -452,8 +452,8 @@ header.top div.header .green {
   text-shadow: -1px -1px 0 #73ac81;
 }
 header.top div.header .green.small {
-  color: #63a373;
-  text-shadow: 1px 1px 0 #e3eee6;
+  color: #7fca91;
+  text-shadow: 0 1px 1px #ffffff;
 }
 header.top div.header .green.border {
   margin: 0.25em 0 0;
@@ -543,7 +543,7 @@ header.top nav ul.menu li a.active {
   }
   header.top div.header a:hover .tagline,
   header.top div.header a:focus .tagline {
-    left: 10px;
+    left: 0px;
   }
   header.top nav {
     position: absolute;
@@ -606,7 +606,7 @@ div.intro p span {
   }
 }
 div.main {
-  background-color: rgba(242, 240, 213, 0.6);
+  background-color: rgba(242, 240, 213, 0.8);
   overflow: hidden;
 }
 div.main a {
@@ -685,12 +685,13 @@ div.main article:hover:before {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    border-top: 3px solid #afa99e;
   }
 }
 footer {
   overflow: hidden;
   color: #ebf7ee;
-  background-color: rgba(51, 125, 69, 0.19999999999999996);
+  background-color: rgba(127, 202, 145, 0.6);
 }
 footer a {
   color: white;
@@ -716,20 +717,18 @@ footer ul.columns > li h3 {
   display: inline-block;
   font-family: 'RobotoCondensed', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
-  color: #42a159;
-  border-bottom: 2px solid rgba(0, 128, 0, 0.09999999999999998);
+  color: black;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.19999999999999996);
 }
 footer ul.columns > li:hover h3 {
-  color: black;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
 }
 footer .copyright {
-  color: #42a159;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: white;
   margin: 0.25em 1em;
   border-top: 1px dashed #42a159;
-}
-footer .copyright a {
-  color: #42a159;
 }
 @media screen and (min-width: 450px) {
   footer ul.columns > li {
@@ -738,6 +737,11 @@ footer .copyright a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 600px) {
+  footer {
+    margin-top: 2em !important;
   }
 }
 @media screen and (min-width: 650px) {
@@ -750,7 +754,6 @@ footer .copyright a {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    margin-top: 2em !important;
   }
 }
 /* publishing interface */
