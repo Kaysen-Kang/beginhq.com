@@ -12,25 +12,25 @@
 	<article>
 		<div class="content">
 			
-			{{ Form::open(array('route' => 'mail')) }}
+			{{ Form::open(array('route' => 'mail', 'class' => 'contact')) }}
 
-			<div class="control-group">
-				{{ Form::label('name', 'Name') }}
+			<div class="col2">
+				{{ Form::label('name', 'Your Name') }}
 				<div class="controls">
 					{{ Form::text('name') }}
 					<span class="error">{{ $errors->first('name') }}</span>
 				</div>
 			</div>
 
-			<div class="control-group">
+			<div class="col2">
 				{{ Form::label('email', 'Email Address') }}
 				<div class="controls">
-					{{ Form::text('email') }}
+					{{ Form::email('email') }}
 					<span class="error">{{ $errors->first('email') }}</span>
 				</div>
 			</div>
 
-			<div class="control-group">
+			<div class="col1">
 				{{ Form::label('content', 'Message') }}
 				<div class="controls">
 					{{ Form::textarea('content')}}
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 
-			<div class="form-actions">
+			<div class="col1">
 				{{ Form::submit('Send', array('class'=>'btn btn-success btn-send btn-larg')) }}
 			</div>
 

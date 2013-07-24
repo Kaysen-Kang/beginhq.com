@@ -509,7 +509,7 @@ footer{
 
 }
 
-/* publishing interface */
+/* other interface */
 
 div.main{
 
@@ -607,6 +607,61 @@ div.main{
 		&:hover{
 			background: lighten(@coffee, 20%);
 		}
+	}
+
+	form.contact{
+		width: 100%;
+
+		.col1{
+			width: 90%;
+			margin: 0.5em auto;
+			clear: both;
+		}
+
+		.col2{
+			width: 90%;
+			margin: 0.5em auto;
+		}
+
+		label{
+			font-family: @font-alt;
+			.font(1.25);
+			line-height: 1.5em;
+		}
+
+		span{
+			display: block;
+		}
+
+		input[type=text], input[type=email]{
+			width: 100%;
+			-webkit-appearance: none;
+			border: 1px solid @grey;
+			padding: 0.5em;
+			.box-sizing(border-box);
+		}
+
+		textarea{
+			width: 100%;
+			-webkit-appearance: none;
+			border: 1px solid @grey;
+			padding: 0.5em;
+			.box-sizing(border-box);
+		}
+
+		@media screen and (min-width: 600px) {
+			
+			.col2{
+				width: 45%;
+				display: inline-block;
+			}
+
+			input[type=text], input[type=email]{
+				width: 90%;
+			}
+
+		}
+
 	}
 
 }
