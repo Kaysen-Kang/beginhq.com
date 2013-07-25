@@ -40,6 +40,7 @@
 
 			<div class="col1">
 				{{ Form::submit('Send', array('class'=>'btn btn-success btn-send btn-larg')) }}
+				<p>We will get back to you within 2 business days.</p>
 			</div>
 
 			{{ Form::close() }}

@@ -373,7 +373,7 @@ div.main{
 			width: 0;
 			height: 0;
 			border-width: 40px 0 0 40px;
-			border-color: darken(@paper, 20%) darken(@paper, 10%); //need to match :after border color
+			border-color: darken(@paper, 40%) darken(@paper, 10%); //need to match :after border color
 			border-style: solid;
 			.box-shadow(-2px 2px 2px 0 fadeout(black, 70%));
 			.transition(border-width .5s cubic-bezier(.06,.94,.41,.93) .5s);
@@ -387,9 +387,8 @@ div.main{
 			right: -4px;
 			left: -4px;
 			bottom: -4px;
-			border: 4px solid darken(@paper, 20%); //need to match :before corner color
+			border: 4px solid darken(@paper, 40%); //need to match :before corner color
 			background-color: @paper;
-			.border-radius(4px);
 		}
 
 		header{
@@ -412,20 +411,55 @@ div.main{
 		}
 	}
 
+	.members{
+		overflow: hidden;
+
+		.member{
+			padding: 1em;
+
+			img{
+				width: 100%;
+				margin: 0 auto;
+				.border-radius(4px);
+			}
+
+			h2{
+				font-family: @font-alt;
+			}
+
+		}
+
+	}
+
 	@media screen and (min-width: 600px) {
 		.border-radius(4px);
 		border-top: 3px solid darken(desaturate(@light, 30%), 30%);
+
+		.member{
+			width: 50%;
+			float: left;
+			.box-sizing(border-box);
+
+			&:nth-child(2n+1){
+				clear: left;
+			}
+		}
 	}
 
 }
 
 footer{
 	overflow: hidden;
-	color: lighten(@green, 20%);
-	background-color: fadeout(darken(@green, 10%), 40%);
+	color: white;
+	background-color: fadeout(darken(@coffee, 10%), 40%);
 
 	a{
-		color: white;
+		color: @green;
+		text-decoration: none;
+
+		&:hover, &:focus{
+			text-decoration: underline;
+		}
 	}
 
 	ul.columns{
@@ -441,21 +475,19 @@ footer{
 			p{
 				margin: 0;
 				.font(1.125);
-				text-shadow: 1px 1px 1px darken(@darkGreen, 25%);
 			}
 
 			h3{
-				margin: 0.5em 0;
-				display: inline-block;
+				margin: 1em 0 0.5em;
 				font-family: @font-alt;
 				font-weight: normal;
-				color: black;
-				border-bottom: 2px solid fadeout(white, 80%);
+				color: @light;
+				border-bottom: 1px dashed fadeout(@light, 90%);
 			}
 
 			&:hover{
 				h3{
-					border-bottom: 2px solid fadeout(white, 20%);
+					border-bottom: 1px dashed fadeout(@light, 60%);
 				}
 			}
 		}
@@ -464,7 +496,7 @@ footer{
 	.copyright{
 		.font(0.875);
 		color: white;
-		margin: 0.25em 1em;
+		margin: 1em;
 		border-top: 1px dashed darken(@green, 30%);
 	}
 
@@ -486,7 +518,7 @@ footer{
 		
 		margin-top: 2em !important;
 		.border-radius(4px);
-		border-top: 3px solid darken(desaturate(@green, 20%), 20%);
+		border-top: 3px solid darken(white, 40%);
 
 	}
 
