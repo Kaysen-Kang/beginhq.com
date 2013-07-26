@@ -17,7 +17,11 @@
 				<li class="item"><a href="#project-2dam"><img src="/asset/img/2dam-img01-thumb.jpg" alt="img"><span>Project 2D.am</span></a></li>
 			</ul>
 
-			<div class="container" id="project-leaf">	
+			<div class="container" id="project-leaf">
+				<div class="info">
+					<h2>Project Leaf</h2>
+					<p>Project Leaf is what we are working on at the moment, we will have more to share in the coming weeks.</p>
+				</div>
 				<ul class="tab">
 					<li class="tab_item"><a href="#">Preview</a></li>
 					<li class="tab_item"><a href="#">Logo</a></li>
@@ -30,7 +34,12 @@
 				</ul>
 			</div>
 
-			<div class="container" id="project-2dam">	
+			<div class="container" id="project-2dam">
+				<div class="info">
+					<h2>2D.am</h2>
+					<p>It is the smartest and lightest news aggregator and information digest service on earth; we build it as a html5 demo for fun.</p>
+				</div>
+
 				<ul class="tab">
 					<li class="tab_item"><a href="#">Screen 1</a></li>
 					<li class="tab_item"><a href="#">Screen 2</a></li>

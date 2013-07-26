@@ -404,6 +404,10 @@ div.main{
 			}
 		}
 
+		img{
+			max-width: 100%;
+		}
+
 		&:hover{
 			&:before{
 				border-width: 10px 0 0 10px;
@@ -448,7 +452,7 @@ div.main{
 
 			img{
 				display: block;
-				max-width: 80%;
+				max-width: 90%;
 				margin: 0 auto;
 				border: 2px solid @darkGreen;
 				.border-radius(4px);
@@ -456,6 +460,20 @@ div.main{
 
 		}
 
+	}
+
+	div.info{
+		width: 80%;
+		margin: 1em auto;
+
+		h2{
+			text-align: center;
+			font-family: @font-alt;
+		}
+
+		p{
+			.font(1.125);
+		}
 	}
 
 	.tab{
