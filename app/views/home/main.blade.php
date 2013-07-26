@@ -73,5 +73,12 @@
 			<p>&copy; 2013 Begin* Studio | <a href="https://github.com/BeginHQ">Source on Github</a></p>
 		</div>
 	</footer>
+
+<script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
+<script type="text/javascript">
+try {
+reinvigorate.track("z8y49-4985gw2bus");
+} catch(err) {}
+</script>
 </body>
 </html>
