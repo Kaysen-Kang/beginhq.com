@@ -712,6 +712,9 @@ div.main .jump .item img {
   max-width: 80%;
   margin: 0 auto;
   border: 2px solid #93bf9e;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 div.main .tab {
   list-style: none;
