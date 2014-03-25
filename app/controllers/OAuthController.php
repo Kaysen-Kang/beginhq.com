@@ -1,5 +1,6 @@
 <?php 
 
+use App\Models\User;
 use OAuth2\OAuth2;
 use OAuth2\Token_Access;
 use OAuth2\Exception as OAuth2_Exception;
@@ -11,14 +12,9 @@ class OAuthController extends BaseController {
 
 		// custom config for oauth
 		$oauth = Config::get('oauth');
-		// return View::make('publish.login')->with("msg",gettype($oauth));
 
 		// load config into oauth client
 		$provider = OAuth2::provider($vendor, $oauth[$vendor]);
-		// $provider = OAuth2::provider($vendor, array(
-		//     'id'  =>  '968961819504.apps.googleusercontent.com',
-		//     'secret'  =>  '87654321'
-		// ));
 
 		// redirect user to retrieve access token (provider login page)
 	    if (!isset($_GET['code']))
@@ -38,25 +34,24 @@ class OAuthController extends BaseController {
 
                 //use the access token to get remote user profile
                 $profile = $provider->get_user_info($token);
-                // return View::make('publish.login')->with("msg", $profile['name']);
 
-                
                 //match a local profile in db
-                $auth_user = DB::table('users')->where('vendor', $vendor)->where('user_id', $profile['uid'])->first();
+                $user = User::getByUidAndVendor($profile['uid'], $vendor);
+                // $auth_user = DB::table('users')->where('vendor', $vendor)->where('user_id', $profile['uid'])->first();
 
-                if ($auth_user)
+                if ( is_null($user) )
                 {
-                	Session::put('auth_user', $auth_user);
-                	return Redirect::route('publish.index');
+                	Notification::success('You are not authorized to access this page.');
+                	return Redirect::route('login');
                 }
                 else
                 {
-                	DB::insert('insert into users (user_id, vendor) values (?, ?)', array($profile['uid'], $vendor));
-                	Notification::success("Login Success!");
-                	return Redirect::route('login');
-                }
+	                Session::put('auth_user', $user);
+	                Notification::success($profile['name']);
+	                return Redirect::route('publish.index');
+                }	
+                
 	        }
-
 	        catch (OAuth2_Exception $e)
 	        {
 	        	//remote access issue, most likely network problem
@@ -68,6 +63,7 @@ class OAuthController extends BaseController {
 
 	public function login()
     {
+    	Notification::success('Welcome!');
         return View::make('publish.login');
     }
 
