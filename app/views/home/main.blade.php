@@ -72,7 +72,8 @@
 		</ul>
 		<div class="copyright">
 			<p>&copy; 2013 Begin* Studio | <a href="https://github.com/BeginHQ">Source on Github</a>
-			<a href="/login">Login</a></p>
+			<a href="/login">Login</a>
+			<a href="/logout">Logout</a></p>
 		</div>
 	</footer>
 
