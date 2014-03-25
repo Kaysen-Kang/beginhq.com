@@ -52,7 +52,7 @@ class OAuthController extends BaseController {
                 else
                 {
                 	DB::insert('insert into users (user_id, vendor) values (?, ?)', array($profile['uid'], $vendor));
-                	Notification::error("Login Success!");
+                	Notification::success("Login Success!");
                 	return Redirect::route('login');
                 }
 	        }
