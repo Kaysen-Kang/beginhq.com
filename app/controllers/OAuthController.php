@@ -4,15 +4,21 @@ use OAuth2\OAuth2;
 use OAuth2\Token_Access;
 use OAuth2\Exception as OAuth2_Exception;
 
-class OAuthController extends \BaseController {
+class OAuthController extends BaseController {
 
 	public function authorize($vendor)
 	{
+
 		// custom config for oauth
-		$oauth = Config::get('oauth.providers');
+		$oauth = Config::get('oauth');
+		// return View::make('publish.login')->with("msg",gettype($oauth));
 
 		// load config into oauth client
 		$provider = OAuth2::provider($vendor, $oauth[$vendor]);
+		// $provider = OAuth2::provider($vendor, array(
+		//     'id'  =>  '968961819504.apps.googleusercontent.com',
+		//     'secret'  =>  '87654321'
+		// ));
 
 		// redirect user to retrieve access token (provider login page)
 	    if (!isset($_GET['code']))
@@ -32,6 +38,8 @@ class OAuthController extends \BaseController {
 
                 //use the access token to get remote user profile
                 $profile = $provider->get_user_info($token);
+                // return View::make('publish.login')->with("msg", $profile['name']);
+
                 
                 //match a local profile in db
                 $auth_user = DB::table('users')->where('vendor', $vendor)->where('user_id', $profile['uid'])->first();
@@ -43,7 +51,8 @@ class OAuthController extends \BaseController {
                 }
                 else
                 {
-                	Notification::error("You are not authorized to access this page.");
+                	DB::insert('insert into users (user_id, vendor) values (?, ?)', array($profile['uid'], $vendor));
+                	Notification::error("Login Success!");
                 	return Redirect::route('login');
                 }
 	        }
