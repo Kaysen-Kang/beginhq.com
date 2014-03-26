@@ -27,12 +27,12 @@
 					@foreach ($articles as $article)
 						<tr>
 							<td>{{ $article->id }}</td>
-							<td><a href="{{ URL::route('publish.show', $article->id) }}">{{ $article->title }}</a></td>
+							<td><a href="{{ URL::route('posts.show', $article->id) }}">{{ $article->title }}</a></td>
 							<td>{{ $article->author }}</td>
 							<td>{{ $article->created_at }}</td>
 							<td>
-								<a class="button" href="{{ URL::route('publish.edit', $article->id) }}">Edit</a>
-								{{ Form::open(array('route' => array('publish.destroy', $article->id), 'method' => 'delete', 'class' => 'inline')) }}
+								<a class="button" href="{{ URL::route('posts.edit', $article->id) }}">Edit</a>
+								{{ Form::open(array('route' => array('posts.destroy', $article->id), 'method' => 'delete', 'class' => 'inline')) }}
     								<button type="submit" class="btn btn-danger btn-mini">Delete</button>
     							{{ Form::close() }}
 							</td>
@@ -41,7 +41,7 @@
 				</tbody>
 			</table>
 
-			<p><a class="button" href="{{ URL::route('publish.create') }}">Create</a></p>
+			<p><a class="button" href="{{ URL::route('posts.create') }}">Create</a></p>
 
 		</div>
 

@@ -48,7 +48,7 @@ class OAuthController extends BaseController {
                 {
 	                Session::put('auth_user', $user);
 	                Notification::success($profile['name']);
-	                return Redirect::route('publish.index');
+	                return Redirect::route('posts.index');
                 }	
                 
 	        }

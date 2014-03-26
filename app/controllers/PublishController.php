@@ -41,7 +41,7 @@ class PublishController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::route('publish.create')->withInput()->withErrors($validator);
+			return Redirect::route('posts.create')->withInput()->withErrors($validator);
 		}
 
 		$article = new Article;
@@ -52,7 +52,7 @@ class PublishController extends \BaseController {
 
 		Notification::success("The article '$article->title' was saved.");
 
-		return Redirect::route('publish.index');
+		return Redirect::route('posts.index');
 	}
 
 	/**
@@ -95,7 +95,7 @@ class PublishController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::route('publish.create')->withInput()->withErrors($validator);
+			return Redirect::route('posts.create')->withInput()->withErrors($validator);
 		}
 
 		$article = Article::find($id);
@@ -106,7 +106,7 @@ class PublishController extends \BaseController {
 
 		Notification::success("The article '$article->title' was saved.");
 
-		return Redirect::route('publish.index');
+		return Redirect::route('posts.index');
 	}
 
 	/**
@@ -122,7 +122,7 @@ class PublishController extends \BaseController {
 
 		Notification::success("The article was delete.");
 
-		return Redirect::route('publish.index');
+		return Redirect::route('posts.index');
 	}
 
 }

@@ -11,5 +11,10 @@ class UserTableSeeder extends Seeder {
 			'vendor' 	=> 'google',
 			'user_id'	=> '105846217830917135862'
  		));
+
+		User::create(array(
+			'vendor' 	=> 'github',
+			'user_id'	=> '6970915'
+ 		));
 	}
 }

@@ -29,7 +29,7 @@ Route::post('/contact', array('as' => 'mail', 'uses' => 'MailController@send'));
 
 Route::group(array('before' => 'oauth'), function()
 {
-	Route::resource('publish', 'PublishController');
+	Route::resource('posts', 'PublishController');
 });
 
 #oauth login

@@ -11,7 +11,7 @@
 	
 		<div class="content">
 			<div id="publish-article" class="publish-article">
-				{{ Form::model($article, array('method' => 'put', 'route' => array('publish.update', $article->id))) }}
+				{{ Form::model($article, array('method' => 'put', 'route' => array('posts.update', $article->id))) }}
 
 				<div class="control-group">
 					{{ Form::label('title', 'Title') }}
@@ -39,7 +39,7 @@
 
 				<div class="form-actions">
 					{{ Form::submit('Save', array('class'=>'btn btn-success btn-save btn-larg')) }}
-					<a href="{{ URL::route('publish.index') }}" class="cancel btn btn-large">Cancel</a>
+					<a href="{{ URL::route('posts.index') }}" class="cancel btn btn-large">Cancel</a>
 				</div>
 
 				{{ Form::close() }}
